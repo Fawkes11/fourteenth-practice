@@ -1,0 +1,22 @@
+[
+    {
+        "pageviews": "10k",
+        "permonth": "8"
+    },
+    {
+        "pageviews": "50k",
+        "permonth": "12"
+    },
+    {
+        "pageviews": "100k",
+        "permonth": "16"
+    },
+    {
+        "pageviews": "500k",
+        "permonth": "24"
+    },
+    {
+        "pageviews": "1M",
+        "permonth": "36"
+    }
+]

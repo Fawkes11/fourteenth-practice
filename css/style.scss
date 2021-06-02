@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap');
+
+$softcyan: hsl(174, 77%, 80%);
+$strongcyan: hsl(174, 86%, 45%);
+$lightgrayishred: hsl(14, 92%, 95%);
+$lightred: hsl(15, 100%, 70%);
+$paleblue: hsl(226, 100%, 87%);
+
+$white: hsl (0, 0%, 100%);
+$verypaleblue: hsl(230, 100%, 99%); 
+$lightgrayishblueempty: hsl(224, 65%, 95%);
+$lightgrayishbluetoggle: hsl(223, 50%, 87%);
+$grayishblue: hsl(225, 20%, 60%);
+$darkdesaturatedblue: hsl(227, 35%, 25%);
+
+$fontfam: Manrope, sans-serif;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $verypaleblue;
+}
+.img__back{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    img{
+        height: 400px;
+    }
+}
+.img__circles{
+    top: 60px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+.container{
+    width: 90%;
+    height: 100%;
+}
+header{
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-family: $fontfam;
+
+}
+.header__tittle{
+    margin-top: 30px;
+    font-size: 22px;
+    color: $darkdesaturatedblue;
+    font-weight: bold;
+    
+}
+.header__info{
+    margin-top: 10px;
+    font-size: 14px;
+    width: 55%;
+    line-height: 25px;
+    color: $grayishblue;
+}
+.pricing{
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 10px $lightgrayishblueempty;
+
+}
+.pricing__tittle{
+    font-size: 12px;
+    color: $grayishblue;
+    font-family: $fontfam;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+.slider__container{
+    margin-top: 30px;
+    width: 85%;
+}
+.slider{
+    margin-top: 10px;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    outline: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, $softcyan 50%, $lightgrayishblueempty 50%);
+}
+.slider::-webkit-slider-thumb{    
+    cursor: pointer;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $strongcyan;
+    background-image: url(../images/icon-slider.svg);
+    box-shadow: 0 10px 16px 5px $softcyan;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover{
+        opacity: 0.8;
+    }
+
+    &:active{
+        cursor: grabbing;
+    }
+}
+/*MOZILLA*/
+.slider::-moz-range-thumb{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $strongcyan;
+    background-image: url(../images/icon-slider.svg);
+    box-shadow: 0 10px 10px 5px $softcyan;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover{
+        opacity: 0.8;
+    }
+    &:active{
+        cursor: grabbing;
+    }
+}
+
+
+#month__price{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: 10px;
+    color: $darkdesaturatedblue;    
+}
+.month{
+    font-family: $fontfam;
+    margin-top: 30px;
+    color: $grayishblue;
+}
+.discount__section{
+    font-family: $fontfam;
+    color: $grayishblue;
+    font-size: 12px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.month__bill{
+    margin-right: 18px;
+}
+.year{
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+
+/*S W I T C H*/
+
+input[type="checkbox"]{
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    -webkit-appearance: none;
+    background-color: $lightgrayishbluetoggle;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba (0,0,0,0.2);
+    transition: 0.5s;
+}
+input:checked[type="checkbox"]{
+    background-color: $softcyan;
+}
+input[type="checkbox"]::before{
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 8px;
+    top: 3px;
+    left: 3px;
+    background: $verypaleblue;
+    box-shadow:  0 2px 5px rgba(0,0,0,0.2);
+    transition: 0.5s;
+}
+input:checked[type="checkbox"]::before{
+    left: 23px;
+}
+
+.number__discount{
+    width: 40px;
+    height: 20px;
+    background-color: $lightgrayishred;
+    color: $lightred;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text__discount{
+    display: none;
+}
+hr{
+    margin-top: 45px;
+    width: 100%;
+    border-width: 0.5px;
+    border-color: $verypaleblue;
+    opacity: 0.3;
+}
+.list{
+    margin-top: 15px;
+    ul{
+        list-style: none;
+        li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $fontfam;
+            color: $grayishblue;
+            font-size: 11px;
+            height: 30px;
+            
+            p{
+               margin-left: 15px;
+            }
+        }
+    }
+    button{
+        cursor: pointer;
+        margin-top: 25px;
+        border: none;
+        border-radius: 23px;
+        height: 45px;
+        width: 180px;
+        background: $darkdesaturatedblue;
+        color: $paleblue;
+    }
+    
+}
+button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 4px $lightgrayishblueempty;
+}
+
+.attribution {
+    position: relative;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 601px){
+    .img__back{
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
+    }
+    .container{
+        width: 540px;
+        height: 100%;
+    }
+    .header__info{
+        font-size: 15px;
+        width: 70%;
+    }
+    
+    .pricing{        
+        height: 400px;    
+        position: relative;
+    }
+    .pricing__tittle{
+        width: 100%;
+        padding-left: 42px;
+        font-size: 14px;
+    }
+    .month{
+        position: absolute;
+        right: 50px;
+        margin-top: 0;
+        top: 30px;
+    }
+    .discount__section{
+        width: 75%;
+        margin-top: 50px;
+        justify-content: flex-end;
+    }
+    .number__discount{
+        width: 100px;
+    }
+    .text__discount{
+        display: block;
+    }
+    hr{
+        margin-top: 45px;
+        width: 100%;
+    }    
+    .list{
+        width: 85%;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        ul{
+            li{
+                justify-content: flex-start;
+            }
+        }
+        button{
+            margin-top: 0;
+        }
+    }
+    .attribution {
+        position: absolute;
+        bottom: 50px;
+    }
+}
